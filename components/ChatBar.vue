@@ -12,7 +12,7 @@
 
 <script setup>
 import { onMounted } from "vue";
-import { useUserStore } from "~/stores/user";
+import { useUserStore } from "../stores/users";
 import { io } from "socket.io-client";
 
 const socket = io("http://localhost:4000");

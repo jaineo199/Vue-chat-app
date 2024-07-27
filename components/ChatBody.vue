@@ -31,7 +31,7 @@
 <script setup>
 import { ref, onMounted, watch } from "vue";
 import { useRouter } from "vue-router";
-import { useUserStore } from "~/stores/user";
+import { useUserStore } from "../stores/users";
 import { io } from "socket.io-client";
 
 const socket = io("http://localhost:4000");
