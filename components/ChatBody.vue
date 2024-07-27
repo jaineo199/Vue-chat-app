@@ -1,28 +1,36 @@
 <template>
-  <div>
-    <header class="chat__mainHeader">
-      <p>Hangout with Colleagues</p>
-      <button class="leaveChat__btn" @click="handleLeaveChat">
+  <div class="flex flex-col h-full">
+    <header
+      class="bg-gray-800 text-white p-4 flex justify-between items-center"
+    >
+      <p class="text-lg font-semibold">Hangout with Colleagues</p>
+      <button
+        class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded"
+        @click="handleLeaveChat"
+      >
         LEAVE CHAT
       </button>
     </header>
 
-    <div class="message__container">
-      <div v-for="message in messages" :key="message.id" class="message__chats">
-        <p class="sender__name" v-if="message.name === userName">You</p>
-        <p v-else>{{ message.name }}</p>
+    <div class="flex-1 overflow-y-auto p-4 bg-gray-100">
+      <div v-for="message in messages" :key="message.id" class="mb-4">
+        <p class="font-semibold text-gray-800" v-if="message.name === userName">
+          You
+        </p>
+        <p v-else class="font-semibold text-gray-600">
+          {{ message.name }}
+        </p>
         <div
           :class="{
-            message__sender: message.name === userName,
-            message__recipient: message.name !== userName,
+            'bg-blue-500 text-white': message.name === userName,
+            'bg-gray-300 text-gray-800': message.name !== userName,
           }"
+          class="rounded-lg p-2 mt-1 max-w-xs inline-block"
         >
           <p>{{ message.text }}</p>
         </div>
       </div>
-      <div class="message__status">
-        <p>{{ typingStatus }}</p>
-      </div>
+      <div class="text-gray-500 text-sm mt-2">{{ typingStatus }}</div>
       <div ref="lastMessageRef" />
     </div>
   </div>

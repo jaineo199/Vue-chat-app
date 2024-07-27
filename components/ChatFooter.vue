@@ -1,14 +1,19 @@
 <template>
-  <div class="chat__footer">
-    <form @submit.prevent="handleSendMessage" class="form">
+  <div class="bg-gray-100 p-4 border-t border-gray-200">
+    <form @submit.prevent="handleSendMessage" class="flex items-center">
       <input
         type="text"
         placeholder="Write message"
-        class="message"
+        class="flex-1 px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
         v-model="message"
         @keydown="handleTyping"
       />
-      <button class="sendBtn">SEND</button>
+      <button
+        type="submit"
+        class="ml-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+      >
+        SEND
+      </button>
     </form>
   </div>
 </template>

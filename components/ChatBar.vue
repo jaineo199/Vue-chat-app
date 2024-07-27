@@ -1,10 +1,16 @@
 <template>
-  <div class="chat__sidebar">
-    <h2>Open Chat</h2>
+  <div class="bg-white shadow-lg rounded-lg p-4 w-80 h-full">
+    <h2 class="text-xl font-bold text-gray-800 mb-4">Open Chat</h2>
     <div>
-      <h4 class="chat__header">ACTIVE USERS</h4>
-      <div class="chat__users">
-        <p v-for="user in users" :key="user.socketID">{{ user.userName }}</p>
+      <h4 class="text-lg font-semibold text-gray-700 mb-2">ACTIVE USERS</h4>
+      <div class="space-y-2">
+        <p
+          v-for="user in users"
+          :key="user.socketID"
+          class="text-gray-900 border-b border-gray-200 py-2"
+        >
+          {{ user.userName }}
+        </p>
       </div>
     </div>
   </div>
