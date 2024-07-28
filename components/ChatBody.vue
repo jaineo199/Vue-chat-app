@@ -72,6 +72,24 @@
           ></textarea>
         </div>
       </div>
+      <div class="flex flex-col gap-y-4">
+        <div class="flex items-center gap-x-4">
+          <Icon name="material-symbols:android-messages" />
+          <p>fahey.designer@robot.co</p>
+        </div>
+        <hr />
+        <div class="flex items-center gap-x-4">
+          <Icon name="material-symbols:admin-meds" />
+          <Icon name="material-symbols:android-messages" />
+          <Icon name="material-symbols:admin-meds" />
+          <Icon name="material-symbols:android-messages" />
+        </div>
+        <hr />
+        <div class="flex items-center gap-x-4">
+          <Icon name="material-symbols:android-messages" />
+          <p>robot.co</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
