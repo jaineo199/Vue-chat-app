@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto">
-    <div class="grid grid-cols-12">
+    <div class="grid grid-cols-12 mt-8">
       <div class="col-span-4">
         <LeftPanel />
       </div>
