@@ -15,7 +15,7 @@
         }"
       />
     </div>
-    <div class="mt-8">
+    <div class="mt-8 flex flex-col gap-y-4">
       <div
         v-for="item in leftPanelDummydata"
         :key="item.iconName"

@@ -35,30 +35,6 @@ export const leftPanelDummydata = [
     iconName: "material-symbols:add-shopping-cart",
     name: "Shop",
   },
-  {
-    iconName: "material-symbols:align-vertical-bottom-rounded",
-    name: "Income",
-  },
-  {
-    iconName: "material-symbols:house",
-    name: "Home",
-  },
-  {
-    iconName: "material-symbols:production-quantity-limits",
-    name: "Products",
-  },
-  {
-    iconName: "material-symbols:inbox-customize-sharp",
-    name: "Customers",
-  },
-  {
-    iconName: "material-symbols:add-shopping-cart",
-    name: "Shop",
-  },
-  {
-    iconName: "material-symbols:align-vertical-bottom-rounded",
-    name: "Income",
-  },
 ];
 
 export const activeUserDummyData = [
@@ -148,12 +124,5 @@ export const productsDummyData = [
     productDescription: "This is the description for Product 2.",
     productCost: 29.99,
     productDate: "2024-06-15",
-  },
-  {
-    productImage: "https://via.placeholder.com/150",
-    productName: "Product 3",
-    productDescription: "This is the description for Product 3.",
-    productCost: 39.99,
-    productDate: "2024-05-20",
   },
 ];

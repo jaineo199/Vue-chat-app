@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-800 text-white p-6 rounded-lg">
+  <div class="bg-gray-800 text-white p-6 rounded-lg h-full">
     <div class="grid grid-cols-2">
       <div class="flex col-span-1 space-x-4 my-2 p-2">
         <img
@@ -66,7 +66,7 @@
           </div>
           <textarea
             class="w-full p-4 text-black border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            rows="5"
+            rows="3"
             placeholder="Write your text here..."
             v-model="textInput"
           ></textarea>
@@ -100,8 +100,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="product in productsDummyData" :key="product.productName">
-              <td class="py-2 border-b">
+            <tr
+              v-for="product in productsDummyData"
+              :key="product.productName"
+              class="hover:bg-gray-700 hover:cursor-pointer"
+            >
+              <td class="py-2">
                 <div class="flex items-center">
                   <img
                     :src="product.productImage"
@@ -114,14 +118,14 @@
                   </div>
                 </div>
               </td>
-              <td class="py-2 border-b">
+              <td class="py-2">
                 <button
                   class="flex items-center px-4 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition"
                 >
                   <span>{{ product.productCost | currency }}</span>
                 </button>
               </td>
-              <td class="py-2 border-b">{{ product.productDate }}</td>
+              <td class="py-2">{{ product.productDate }}</td>
             </tr>
           </tbody>
         </table>

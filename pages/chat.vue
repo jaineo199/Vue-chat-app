@@ -76,7 +76,7 @@
           </div>
           <div class="col-span-8">
             <ChatBody />
-            <ChatFooter />
+            <!-- <ChatFooter /> -->
           </div>
         </div>
       </div>
