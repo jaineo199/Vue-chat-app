@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col h-full">
+  <div class="flex flex-col h-full rounded-lg">
     <header
       class="bg-gray-800 text-white p-4 flex justify-between items-center"
     >

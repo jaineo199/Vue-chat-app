@@ -1,5 +1,6 @@
 <template>
   <div
+    class="h-full flex flex-col justify-between"
     :class="{
       'bg-slate-300	 text-black p-6 rounded-lg': mode === 'light',
       'bg-gray-800 text-white p-6 rounded-lg': mode === 'dark',
@@ -14,7 +15,7 @@
         }"
       />
     </div>
-    <div class="mt-12">
+    <div class="mt-8">
       <div
         v-for="item in leftPanelDummydata"
         :key="item.iconName"
