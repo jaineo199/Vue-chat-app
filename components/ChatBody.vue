@@ -31,6 +31,48 @@
         </div>
       </div>
     </div>
+    <div>
+      <div class="flex items-center gap-x-2">
+        <p>Private note</p>
+        <Icon name="material-symbols:info" />
+      </div>
+      <div>
+        <div class="bg-gray-100 p-6 rounded-lg">
+          <div class="flex space-x-2 mb-4">
+            <button class="p-2 hover:bg-gray-200 rounded">
+              <Icon name="mdi:format-bold" class="w-5 h-5 text-gray-700" />
+            </button>
+            <button class="p-2 hover:bg-gray-200 rounded">
+              <Icon name="mdi:format-italic" class="w-5 h-5 text-gray-700" />
+            </button>
+            <button class="p-2 hover:bg-gray-200 rounded">
+              <Icon name="mdi:format-underline" class="w-5 h-5 text-gray-700" />
+            </button>
+            <button class="p-2 hover:bg-gray-200 rounded">
+              <Icon name="mdi:file-upload" class="w-5 h-5 text-gray-700" />
+            </button>
+            <button class="p-2 hover:bg-gray-200 rounded">
+              <Icon
+                name="mdi:format-align-left"
+                class="w-5 h-5 text-gray-700"
+              />
+            </button>
+            <button class="p-2 hover:bg-gray-200 rounded">
+              <Icon
+                name="mdi:format-align-right"
+                class="w-5 h-5 text-gray-700"
+              />
+            </button>
+          </div>
+          <textarea
+            class="w-full p-4 text-black border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            rows="10"
+            placeholder="Write your text here..."
+            v-model="textInput"
+          ></textarea>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -44,6 +86,7 @@ const socket = io("http://localhost:4000");
 const userStore = useUserStore();
 const router = useRouter();
 const lastMessageRef = ref(null);
+const textInput = ref("");
 
 const handleLeaveChat = () => {
   localStorage.removeItem("userName");
