@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white shadow-lg rounded-lg p-4 w-80 h-full">
+  <div class="bg-gray-800 text-white p-6 rounded-lg">
     <h2 class="text-xl font-bold text-gray-800 mb-4">Open Chat</h2>
     <div>
       <h4 class="text-lg font-semibold text-gray-700 mb-2">ACTIVE USERS</h4>
