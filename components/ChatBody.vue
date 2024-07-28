@@ -66,7 +66,7 @@
           </div>
           <textarea
             class="w-full p-4 text-black border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            rows="10"
+            rows="5"
             placeholder="Write your text here..."
             v-model="textInput"
           ></textarea>
@@ -90,6 +90,42 @@
           <p>robot.co</p>
         </div>
       </div>
+      <div class="container mx-auto mt-8">
+        <table class="min-w-full">
+          <thead>
+            <tr>
+              <th class="py-2 text-left">Product</th>
+              <th class="py-2 text-left">Price</th>
+              <th class="py-2 text-left">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="product in productsDummyData" :key="product.productName">
+              <td class="py-2 border-b">
+                <div class="flex items-center">
+                  <img
+                    :src="product.productImage"
+                    alt="Product Image"
+                    class="w-16 h-16 mr-4 rounded"
+                  />
+                  <div>
+                    <p class="font-bold">{{ product.productName }}</p>
+                    <p>{{ product.productDescription }}</p>
+                  </div>
+                </div>
+              </td>
+              <td class="py-2 border-b">
+                <button
+                  class="flex items-center px-4 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition"
+                >
+                  <span>{{ product.productCost | currency }}</span>
+                </button>
+              </td>
+              <td class="py-2 border-b">{{ product.productDate }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </template>
@@ -99,6 +135,7 @@ import { ref, onMounted, watch } from "vue";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/users";
 import { io } from "socket.io-client";
+import { productsDummyData } from "../utils/dummyData";
 
 const socket = io("http://localhost:4000");
 const userStore = useUserStore();

@@ -133,3 +133,27 @@ export const activeUserDummyData = [
       "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&q=80",
   },
 ];
+
+export const productsDummyData = [
+  {
+    productImage: "https://via.placeholder.com/150",
+    productName: "Product 1",
+    productDescription: "This is the description for Product 1.",
+    productCost: 19.99,
+    productDate: "2024-07-01",
+  },
+  {
+    productImage: "https://via.placeholder.com/150",
+    productName: "Product 2",
+    productDescription: "This is the description for Product 2.",
+    productCost: 29.99,
+    productDate: "2024-06-15",
+  },
+  {
+    productImage: "https://via.placeholder.com/150",
+    productName: "Product 3",
+    productDescription: "This is the description for Product 3.",
+    productCost: 39.99,
+    productDate: "2024-05-20",
+  },
+];
