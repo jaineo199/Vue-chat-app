@@ -72,7 +72,7 @@
           ></textarea>
         </div>
       </div>
-      <div class="flex flex-col gap-y-4">
+      <div class="flex flex-col gap-y-4 mt-8">
         <div class="flex items-center gap-x-4">
           <Icon name="material-symbols:android-messages" />
           <p>fahey.designer@robot.co</p>
