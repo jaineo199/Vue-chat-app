@@ -1,37 +1,35 @@
 <template>
-  <div class="flex flex-col h-full rounded-lg">
-    <header
-      class="bg-gray-800 text-white p-4 flex justify-between items-center"
-    >
-      <p class="text-lg font-semibold">Hangout with Colleagues</p>
-      <button
-        class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded"
-        @click="handleLeaveChat"
-      >
-        LEAVE CHAT
-      </button>
-    </header>
-
-    <div class="flex-1 overflow-y-auto p-4 bg-gray-100">
-      <div v-for="message in messages" :key="message.id" class="mb-4">
-        <p class="font-semibold text-gray-800" v-if="message.name === userName">
-          You
-        </p>
-        <p v-else class="font-semibold text-gray-600">
-          {{ message.name }}
-        </p>
-        <div
-          :class="{
-            'bg-blue-500 text-white': message.name === userName,
-            'bg-gray-300 text-gray-800': message.name !== userName,
-          }"
-          class="rounded-lg p-2 mt-1 max-w-xs inline-block"
-        >
-          <p>{{ message.text }}</p>
+  <div class="bg-gray-800 text-white p-6 rounded-lg">
+    <div class="grid grid-cols-2">
+      <div class="flex col-span-1 space-x-4 my-2 p-2">
+        <img
+          src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+          alt="User Image"
+          class="w-10 h-10 rounded-full"
+        />
+        <div>
+          <p class="text-md font-medium">Virat</p>
+          <p class="text-sm text-gray-400">viratkohli</p>
         </div>
       </div>
-      <div class="text-gray-500 text-sm mt-2">{{ typingStatus }}</div>
-      <div ref="lastMessageRef" />
+      <div class="flex col-span-1 space-x-4 my-2 p-2">
+        <div>
+          <button
+            class="flex items-center px-4 py-2 bg-black gap-x-2 border border-slate-300 text-white font-semibold rounded-md"
+          >
+            <span>Follow</span>
+            <span class="text-lg font-bold mr-2">+</span>
+          </button>
+        </div>
+        <div>
+          <button
+            class="flex items-center px-4 py-2 bg-black gap-x-2 border border-slate-300 text-white font-semibold rounded-md"
+          >
+            <span>Message</span>
+            <Icon name="material-symbols:android-messages" />
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
