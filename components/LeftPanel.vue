@@ -48,14 +48,24 @@
       <div class="bg-black rounded-full">
         <div class="flex">
           <button
-            class="flex items-center justify-center basis-3/6 gap-x-2 p-3"
+            :class="{
+              'flex items-center m-2 justify-center rounded-full bg-gray-600 basis-3/6 gap-x-2 p-3':
+                mode === 'light',
+              'flex items-center justify-center basis-3/6 gap-x-2 p-3':
+                mode === 'dark',
+            }"
             @click="setMode('light')"
           >
             <Icon name="material-symbols:sunny" style="color: white" />
             <span class="text-white">Light</span>
           </button>
           <button
-            class="flex items-center justify-center basis-3/6 gap-x-2 p-3"
+            :class="{
+              'flex items-center m-2 justify-center rounded-full bg-gray-600 basis-3/6 gap-x-2 p-3':
+                mode === 'dark',
+              'flex items-center justify-center basis-3/6 gap-x-2 p-3':
+                mode === 'light',
+            }"
             @click="setMode('dark')"
           >
             <Icon name="material-symbols:mode-night" style="color: white" />
