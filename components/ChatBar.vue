@@ -1,13 +1,25 @@
 <template>
   <div class="bg-gray-800 text-white p-6 rounded-lg">
-    <h2 class="text-xl font-bold mb-4">Open Chat</h2>
     <div>
-      <h4 class="text-lg font-semibold mb-2">ACTIVE USERS</h4>
+      <div
+        class="flex space-x-4 my-2 hover:bg-gray-700 cursor-pointer p-2 rounded-lg"
+      >
+        <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" />
+
+        <div>
+          <p class="text-sm text-gray-400">Name</p>
+        </div>
+      </div>
       <div
         v-for="user in activeUserDummyData"
         :key="user.username"
-        class="flex items-center space-x-4 my-2"
+        class="flex space-x-4 my-2 hover:bg-gray-700 cursor-pointer p-2 hover:rounded-lg hover:border-none border-b border-gray-600 last:border-none"
       >
+        <input
+          type="checkbox"
+          class="form-checkbox h-5 w-5 text-blue-600"
+          v-model="user.checked"
+        />
         <img
           :src="user.image"
           alt="User Image"
