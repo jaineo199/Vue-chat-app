@@ -3,6 +3,10 @@ import { ref } from "vue";
 
 export const useUserStore = defineStore("user", () => {
   const userName = ref(localStorage.getItem("userName") || "");
+  const userSelectedPreferedMode = ref(
+    localStorage.getItem("userSelectedPreferedMode") || ""
+  );
+
   const users = ref<any>([]);
   const messages = ref<any>([]);
   const typingStatus = ref("");
@@ -10,6 +14,11 @@ export const useUserStore = defineStore("user", () => {
   const setUserName = (name: any) => {
     userName.value = name;
     localStorage.setItem("userName", name);
+  };
+
+  const setuserSelectedPreferedMode = (data: string) => {
+    userSelectedPreferedMode.value = data;
+    localStorage.setItem("userSelectedPreferedMode", data);
   };
 
   const addUser = (user: any) => {
@@ -30,6 +39,8 @@ export const useUserStore = defineStore("user", () => {
 
   return {
     userName,
+    userSelectedPreferedMode,
+    setuserSelectedPreferedMode,
     users,
     messages,
     typingStatus,

@@ -45,4 +45,10 @@
 
 <script setup>
 import { leftPanelDummydata } from "../utils/dummyData";
+import { useUserStore } from "../stores/users";
+const userStore = useUserStore();
+
+onMounted(() => {
+  userStore.setuserSelectedPreferedMode("dark");
+});
 </script>
