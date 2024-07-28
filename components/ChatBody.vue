@@ -24,6 +24,7 @@
         <div>
           <button
             class="flex items-center px-4 py-2 bg-black gap-x-2 border border-slate-300 text-white font-semibold rounded-md"
+            @click="handleSendMessage"
           >
             <span>Message</span>
             <Icon name="material-symbols:android-messages" />
@@ -151,6 +152,18 @@ const handleLeaveChat = () => {
   localStorage.removeItem("userName");
   router.push("/");
   window.location.reload();
+};
+
+const handleSendMessage = () => {
+  if (textInput.value.trim() && localStorage.getItem("userName")) {
+    socket.emit("message", {
+      text: textInput.value,
+      name: localStorage.getItem("userName"),
+      id: `${socket.id}${Math.random()}`,
+      socketID: socket.id,
+    });
+    textInput.value = "";
+  }
 };
 
 onMounted(() => {
